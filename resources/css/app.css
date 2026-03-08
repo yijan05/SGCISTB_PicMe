@@ -1,11 +1,279 @@
-@import 'tailwindcss';
+/* IMPORTAR FUENTES */
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Quicksand:wght@400;500;600&display=swap');
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Nunito", sans-serif;
+}
+
+body{
+background:#e8f5e9;
+min-height:100vh;
+}
+
+
+/* ---------------- PANTALLA DE CARGA ---------------- */
+
+#loading-screen{
+position:fixed;
+width:100%;
+height:100vh;
+background:#0f2027;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+#loading-video{
+width:300px;
+max-width:80%;
+margin-bottom:20px;
+}
+
+#btn-comenzar{
+padding:12px 40px;
+border:none;
+background:#4CAF50;
+color:white;
+font-size:22px;
+border-radius:25px;
+cursor:pointer;
+transition:0.3s;
+}
+
+#btn-comenzar:hover{
+background:#2e7d32;
+transform:scale(1.05);
+}
+
+
+/* ---------------- CONTENEDOR PRINCIPAL ---------------- */
+
+.contenedor-principal{
+display:none;
+width:100%;
+min-height:100vh;
+display:flex;
+}
+
+
+/* ---------------- PANEL IZQUIERDO ---------------- */
+
+.panel-izquierdo{
+flex:1;
+background:linear-gradient(135deg,#6fbf73,#3f9142);
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+padding:60px;
+}
+
+.panel-izquierdo img{
+width:250px;
+max-width:80%;
+border-radius:10px;
+margin:20px 0;
+}
+
+.panel-izquierdo h2{
+font-size:40px;
+font-weight:700;
+}
+
+.panel-izquierdo p{
+font-size:18px;
+opacity:0.9;
+}
+
+
+/* ---------------- PANEL DERECHO ---------------- */
+
+.panel-derecho{
+flex:1;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+
+/* ---------------- LOGIN BOX ---------------- */
+
+.login-box{
+width:350px;
+max-width:90%;
+text-align:center;
+font-family:"Quicksand", sans-serif;
+}
+
+
+/* TITULO IMAGEN */
+
+.titulo-picme{
+display:flex;
+justify-content:center;
+align-items:center;
+margin-bottom:20px;
+}
+
+.titulo-picme img{
+width:220px;
+max-width:100%;
+height:auto;
+transition:0.3s;
+}
+
+.titulo-picme img:hover{
+transform:scale(1.05);
+filter:drop-shadow(0px 5px 10px rgba(0,0,0,0.2));
+}
+
+.login-box p{
+margin-bottom:30px;
+color:#666;
+font-size:16px;
+}
+
+
+/* INPUTS */
+
+.login-box input{
+width:100%;
+padding:12px 15px;
+margin-bottom:15px;
+border-radius:25px;
+border:1px solid #ccc;
+outline:none;
+font-size:16px;
+transition:0.2s;
+}
+
+.login-box input:focus{
+border-color:#4CAF50;
+box-shadow:0 0 5px rgba(76,175,80,0.4);
+}
+
+
+/* BOTONES */
+
+.btn-principal{
+width:100%;
+padding:12px;
+background:#4CAF50;
+color:white;
+border:none;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+margin-bottom:10px;
+transition:0.3s;
+}
+
+.btn-principal:hover{
+background:#2e7d32;
+transform:scale(1.02);
+}
+
+.btn-secundario{
+width:100%;
+padding:12px;
+background:white;
+border:2px solid #4CAF50;
+color:#4CAF50;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn-secundario:hover{
+background:#4CAF50;
+color:white;
+}
+
+
+/* ---------------- TABLET ---------------- */
+
+@media(max-width:1024px){
+
+.panel-izquierdo h2{
+font-size:32px;
+}
+
+.panel-izquierdo p{
+font-size:16px;
+}
+
+.titulo-picme img{
+width:200px;
+}
+
+}
+
+
+/* ---------------- MOVIL ---------------- */
+
+@media(max-width:768px){
+
+.contenedor-principal{
+flex-direction:column;
+}
+
+.panel-izquierdo{
+height:40vh;
+padding:30px;
+}
+
+.panel-derecho{
+height:60vh;
+}
+
+.panel-izquierdo h2{
+font-size:26px;
+}
+
+.panel-izquierdo p{
+font-size:14px;
+}
+
+.titulo-picme img{
+width:180px;
+}
+
+.login-box{
+width:85%;
+}
+
+}
+
+
+/* ---------------- MOVIL PEQUEÑO ---------------- */
+
+@media(max-width:480px){
+
+.panel-izquierdo h2{
+font-size:22px;
+}
+
+.panel-izquierdo p{
+font-size:13px;
+}
+
+.titulo-picme img{
+width:150px;
+}
+
+#btn-comenzar{
+font-size:18px;
+padding:10px 30px;
+}
+
 }
