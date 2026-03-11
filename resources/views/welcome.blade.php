@@ -81,6 +81,18 @@
 
             <p>Reconocimiento Facial</p>
 
+            <form action="/face-login" method ="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="foto" required>
+                <button> class="btn-principal" type="submit"
+                    reconocer rostor
+                </button>
+
+            </form>
+
+            <br>
+
+            <!-- el boton de registro -->
 
             <input type="email" placeholder="Correo electrónico">
 
@@ -112,9 +124,6 @@ document.getElementById("loading-screen").style.display="none";
 document.getElementById("menu").style.display="flex";
 }
 
-function iniciarSesion(){
-window.location.href="malla_y_BD.py";
-}
 
 function registrarUsuario(){
 window.location.href="registro.html";
